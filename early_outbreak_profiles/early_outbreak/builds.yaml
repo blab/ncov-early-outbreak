@@ -1,0 +1,34 @@
+# Define input files.
+inputs:
+  - name: gisaid
+    metadata: "s3://nextstrain-ncov-private/metadata.tsv.gz"
+    filtered: "s3://nextstrain-ncov-private/filtered_gisaid.fasta.xz"
+
+# In this example, we use these default methods. See other templates for examples of how to customize this subsampling scheme.
+builds:
+  # This build samples evenly from the globe
+  # with a build name that will produce the following URL fragment on Nextstrain/auspice:
+  # /ncov/global
+  early-outbreak:
+    subsampling_scheme: early
+    region: global
+
+# Here, you can specify what type of auspice_config you want to use
+# and what description you want. These will apply to all the above builds.
+# If you want to specify specific files for each build - you can!
+# See the 'example_advanced_customization' builds.yaml
+files:
+  auspice_config: "early_outbreak_profiles/early_outbreak/early_outbreak_auspice_config.json"
+  description: "early_outbreak_profiles/early_outbreak/early_outbreak_description.md"
+
+subsampling:
+  early:
+    global:
+      group_by: "division year month"
+      max_sequences: 100
+      min-date: "--max-date 2019-12-01"
+      max-date: "--max-date 2020-01-31"
+
+frequencies:
+  min_date: 2019-12-01
+  max_date: 2020-01-31
