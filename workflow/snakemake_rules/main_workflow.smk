@@ -1151,13 +1151,10 @@ def _get_node_data_by_wildcards(wildcards):
         rules.refine.output.node_data,
         rules.ancestral.output.node_data,
         rules.translate.output.node_data,
-        rules.rename_emerging_lineages.output.clade_data,
         rules.clades.output.clade_data,
-        rules.recency.output.node_data,
         rules.traits.output.node_data,
-        rules.logistic_growth.output.node_data,
         rules.aa_muts_explicit.output.node_data,
-        rules.distances.output.node_data
+        "early_outbreak_profiles/early_outbreak/huanan.json"
     ]
 
     if "run_pangolin" in config and config["run_pangolin"]:
