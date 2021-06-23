@@ -21,6 +21,7 @@ builds:
 # If you want to specify specific files for each build - you can!
 # See the 'example_advanced_customization' builds.yaml
 files:
+  exclude: "early_outbreak_profiles/early_outbreak/exclude.txt"
   auspice_config: "early_outbreak_profiles/early_outbreak/early_outbreak_auspice_config.json"
   description: "early_outbreak_profiles/early_outbreak/early_outbreak_description.md"
 
