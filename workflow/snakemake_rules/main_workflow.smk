@@ -711,7 +711,7 @@ rule refine:
         # Note that Snakemake >5.10.0 supports input.size_mb to avoid converting from bytes to MB.
         mem_mb=lambda wildcards, input: 15 * int(input.size / 1024 / 1024)
     params:
-        root = config["refine"]["root"],
+        root = lambda w: config["builds"][w.build_name]["root"] if "root" in config["builds"][w.build_name] else config["refine"]["root"],
         clock_rate = config["refine"]["clock_rate"],
         clock_std_dev = config["refine"]["clock_std_dev"],
         coalescent = config["refine"]["coalescent"],

@@ -11,10 +11,18 @@ inputs:
 builds:
   # This build samples evenly from the globe
   # with a build name that will produce the following URL fragment on Nextstrain/auspice:
+
   # /ncov/global
-  early-outbreak:
+  early-outbreak_root-A:
     subsampling_scheme: early
     region: global
+    root: "Wuhan/WH04/2020"
+    title: "Phylogeny of early SARS-CoV-2 viruses rooted to lineage A"
+  early-outbreak_root-B:
+    subsampling_scheme: early
+    region: global
+    root: "Wuhan/Hu-1/2019"
+    title: "Phylogeny of early SARS-CoV-2 viruses rooted to lineage B"
 
 # Here, you can specify what type of auspice_config you want to use
 # and what description you want. These will apply to all the above builds.
@@ -22,6 +30,7 @@ builds:
 # See the 'example_advanced_customization' builds.yaml
 files:
   exclude: "early_outbreak_profiles/early_outbreak/exclude.txt"
+  clades: "early_outbreak_profiles/early_outbreak/clades.tsv"
   auspice_config: "early_outbreak_profiles/early_outbreak/early_outbreak_auspice_config.json"
   description: "early_outbreak_profiles/early_outbreak/early_outbreak_description.md"
 

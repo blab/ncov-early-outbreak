@@ -106,8 +106,8 @@
     "region"
   ],
   "display_defaults": {
-    "color_by": "division",
-    "distance_measure": "num_date",
+    "color_by": "clade_membership",
+    "distance_measure": "div",
     "geo_resolution": "division",
     "map_triplicate": true,
     "branch_label": "clade",
@@ -115,18 +115,17 @@
   },
   "filters": [
     "clade_membership",
-    "region",
     "country",
     "division",
     "location",
     "division_exposure",
-    "host",
-    "pango_lineage"
+    "pango_lineage",
+    "author",
+    "huanan_market"
   ],
   "panels": [
     "tree",
     "map",
-    "entropy",
-    "frequencies"
+    "entropy"
   ]
 }
