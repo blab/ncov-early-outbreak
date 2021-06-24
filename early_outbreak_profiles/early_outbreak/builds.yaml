@@ -23,6 +23,11 @@ builds:
     region: global
     root: "Wuhan/Hu-1/2019"
     title: "Phylogeny of early SARS-CoV-2 viruses rooted to lineage B"
+  early-outbreak_root-AB:
+    subsampling_scheme: early
+    region: global
+    root: "Sichuan/SC-MY-054/2020"
+    title: "Phylogeny of early SARS-CoV-2 viruses rooted between lineage A and B"
 
 # Here, you can specify what type of auspice_config you want to use
 # and what description you want. These will apply to all the above builds.
