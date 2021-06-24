@@ -2384,6 +2384,10 @@ Canada/BC-BCCDC-13632/2020
 Canada/BC-BCCDC-14740/2020
 Canada/BC-BCCDC-9093/2020
 
+# excess divergence
+Australia/VIC01/2020
+Australia/NSW02/2020
+
 # removing duplicates of Huanan market cases as flagged by 
 # https://github.com/jbloom/SARS-CoV-2_PRJNA612766/blob/main/data/WHO_China_Report_Dec2019_cases.yaml
 Wuhan/WIV02/2019

@@ -210,9 +210,9 @@ rule filter:
     params:
         min_length = lambda wildcards: _get_filter_value(wildcards, "min_length"),
         exclude_where = lambda wildcards: _get_filter_value(wildcards, "exclude_where"),
+        max_date = "2020-01-31",        
         min_date = lambda wildcards: _get_filter_value(wildcards, "min_date"),
         ambiguous = lambda wildcards: f"--exclude-ambiguous-dates-by {_get_filter_value(wildcards, 'exclude_ambiguous_dates_by')}" if _get_filter_value(wildcards, "exclude_ambiguous_dates_by") else "",
-        date = (date.today() + datetime.timedelta(days=1)).strftime("%Y-%m-%d"),
         intermediate_output=lambda wildcards, output: Path(output.sequences).with_suffix("")
     resources:
         # Memory use scales primarily with the size of the metadata file.
@@ -224,7 +224,7 @@ rule filter:
             --sequences {input.sequences} \
             --metadata {input.metadata} \
             --include {input.include} \
-            --max-date {params.date} \
+            --max-date {params.max_date} \
             --min-date {params.min_date} \
             {params.ambiguous} \
             --exclude {input.exclude} \

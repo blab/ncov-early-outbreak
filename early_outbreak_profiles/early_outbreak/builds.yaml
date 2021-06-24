@@ -2,7 +2,7 @@
 inputs:
   - name: gisaid
     metadata: "s3://nextstrain-ncov-private/metadata.tsv.gz"
-    filtered: "s3://nextstrain-ncov-private/filtered_gisaid.fasta.xz"
+    aligned: "s3://nextstrain-ncov-private/aligned_gisaid.fasta.xz"
   - name: SRR11313485
     metadata: "data/SRR11313485_metadata.tsv"
     sequences: "data/SRR11313485_sequences.fasta"
@@ -40,10 +40,17 @@ files:
   description: "early_outbreak_profiles/early_outbreak/early_outbreak_description.md"
 
 filter:
+  gisaid:
+    skip_diagnostics: True # skip diagnostics (which can remove genomes) for this input
   SRR11313485:
     min_length: 5000 # Allow shorter (partial) genomes
     skip_diagnostics: True # skip diagnostics (which can remove genomes) for this input
     exclude_ambiguous_dates_by: "month" # allow month-level ambiguous dates, ie 2020-01-XX
+
+mask:
+  mask_from_beginning: 100
+  mask_from_end: 100
+  mask_sites: "13402 24389 24390 29709 29711 29713"
 
 subsampling:
   early:
