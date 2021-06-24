@@ -24,7 +24,12 @@
       "key": "huanan_market",
       "title": "Huanan market exposure",
       "type": "categorical"
-    },    
+    },
+    {
+      "key": "bioproject_SRR11313485",
+      "title": "BioProject SRR11313485",
+      "type": "categorical"
+    },
     {
       "key": "location",
       "title": "Location",
@@ -120,8 +125,8 @@
     "location",
     "division_exposure",
     "pango_lineage",
-    "author",
-    "huanan_market"
+    "huanan_market",
+    "bioproject_SRR11313485"
   ],
   "panels": [
     "tree",

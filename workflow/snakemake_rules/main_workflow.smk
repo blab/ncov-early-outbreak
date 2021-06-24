@@ -1154,7 +1154,8 @@ def _get_node_data_by_wildcards(wildcards):
         rules.clades.output.clade_data,
         rules.traits.output.node_data,
         rules.aa_muts_explicit.output.node_data,
-        "early_outbreak_profiles/early_outbreak/huanan.json"
+        "early_outbreak_profiles/early_outbreak/huanan.json",
+        "early_outbreak_profiles/early_outbreak/SRR11313485.json"
     ]
 
     if "run_pangolin" in config and config["run_pangolin"]:
